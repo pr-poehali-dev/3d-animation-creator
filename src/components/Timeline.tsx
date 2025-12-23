@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -14,7 +14,7 @@ interface TimelineProps {
 const Timeline = ({ keyframes, setKeyframes, currentFrame, setCurrentFrame, selectedObject }: TimelineProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const totalFrames = 120;
-  const isPlaying = useRef(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const playInterval = useRef<number>();
 
   useEffect(() => {
@@ -67,13 +67,14 @@ const Timeline = ({ keyframes, setKeyframes, currentFrame, setCurrentFrame, sele
   }, [currentFrame, keyframes]);
 
   const togglePlayback = () => {
-    isPlaying.current = !isPlaying.current;
+    const newIsPlaying = !isPlaying;
+    setIsPlaying(newIsPlaying);
     
-    if (isPlaying.current) {
+    if (newIsPlaying) {
       playInterval.current = window.setInterval(() => {
         setCurrentFrame((prev) => {
           if (prev >= totalFrames - 1) {
-            isPlaying.current = false;
+            setIsPlaying(false);
             if (playInterval.current) clearInterval(playInterval.current);
             return 0;
           }
@@ -109,7 +110,7 @@ const Timeline = ({ keyframes, setKeyframes, currentFrame, setCurrentFrame, sele
           size="sm"
           onClick={togglePlayback}
         >
-          <Icon name={isPlaying.current ? "Pause" : "Play"} size={16} />
+          <Icon name={isPlaying ? "Pause" : "Play"} size={16} />
         </Button>
         <Button 
           variant="ghost" 

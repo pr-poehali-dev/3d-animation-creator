@@ -14,22 +14,34 @@ const ModelsLibrary = ({ onClose, onSelectModel }: ModelsLibraryProps) => {
   const characters = [
     { id: 1, name: 'Человек базовый', bones: 18, preview: '🧍' },
     { id: 2, name: 'Женщина', bones: 20, preview: '🧍‍♀️' },
-    { id: 3, name: 'Атлет', bones: 22, preview: '🏃' },
-    { id: 4, name: 'Ребёнок', bones: 16, preview: '🧒' },
+    { id: 3, name: 'Мужчина', bones: 20, preview: '🧍‍♂️' },
+    { id: 4, name: 'Атлет', bones: 22, preview: '🏃' },
+    { id: 5, name: 'Ребёнок', bones: 16, preview: '🧒' },
+    { id: 6, name: 'Пожилой', bones: 18, preview: '🧓' },
+    { id: 7, name: 'Танцор', bones: 24, preview: '💃' },
+    { id: 8, name: 'Боксёр', bones: 22, preview: '🥊' },
   ];
 
   const creatures = [
-    { id: 5, name: 'Собака', bones: 24, preview: '🐕' },
-    { id: 6, name: 'Кошка', bones: 22, preview: '🐈' },
-    { id: 7, name: 'Птица', bones: 14, preview: '🦅' },
-    { id: 8, name: 'Дракон', bones: 32, preview: '🐉' },
+    { id: 9, name: 'Собака', bones: 24, preview: '🐕' },
+    { id: 10, name: 'Кошка', bones: 22, preview: '🐈' },
+    { id: 11, name: 'Лошадь', bones: 28, preview: '🐴' },
+    { id: 12, name: 'Птица', bones: 14, preview: '🦅' },
+    { id: 13, name: 'Дракон', bones: 32, preview: '🐉' },
+    { id: 14, name: 'Динозавр', bones: 30, preview: '🦖' },
+    { id: 15, name: 'Рыба', bones: 12, preview: '🐠' },
+    { id: 16, name: 'Змея', bones: 40, preview: '🐍' },
   ];
 
   const objects = [
-    { id: 9, name: 'Куб', bones: 0, preview: '📦' },
-    { id: 10, name: 'Сфера', bones: 0, preview: '⚽' },
-    { id: 11, name: 'Цилиндр', bones: 0, preview: '🥫' },
-    { id: 12, name: 'Конус', bones: 0, preview: '🔺' },
+    { id: 17, name: 'Куб', bones: 0, preview: '📦' },
+    { id: 18, name: 'Сфера', bones: 0, preview: '⚽' },
+    { id: 19, name: 'Цилиндр', bones: 0, preview: '🥫' },
+    { id: 20, name: 'Конус', bones: 0, preview: '🔺' },
+    { id: 21, name: 'Автомобиль', bones: 8, preview: '🚗' },
+    { id: 22, name: 'Самолёт', bones: 6, preview: '✈️' },
+    { id: 23, name: 'Робот', bones: 20, preview: '🤖' },
+    { id: 24, name: 'Дерево', bones: 10, preview: '🌳' },
   ];
 
   const ModelCard = ({ model }: { model: any }) => (
